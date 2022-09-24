@@ -36,10 +36,10 @@ const timer = (id, deadline) => {
         function updateClock() {
             const time = getTimeRemaning(endtime)
 
-            days.textContent = addZero(t.days)
-            hours.textContent = addZero(t.hours)
-            minutes.textContent = addZero(t.minutes)
-            seconds.textContent = addZero(t.seconds)
+            days.textContent = addZero(time.days)
+            hours.textContent = addZero(time.hours)
+            minutes.textContent = addZero(time.minutes)
+            seconds.textContent = addZero(time.seconds)
 
             if (time.total <= 0) {
                 days.textContent = "00"

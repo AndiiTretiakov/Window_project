@@ -15176,7 +15176,6 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_timer__WEBPACK_IMPORTED_MODULE_5__["default"])('.container1', deadline);
   Object(_modules_images__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
-console.log('Working...');
 
 /***/ }),
 
@@ -15193,11 +15192,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const changeModalState = state => {
-  const windowForm = document.querySelectorAll('.balcon_icons_img'),
-        windowWidth = document.querySelector('#width'),
-        windowHeight = document.querySelector('#height'),
-        windowType = document.querySelector('#view_type'),
-        windowProfile = document.querySelectorAll('.checkbox');
+  const windowForm = document.querySelectorAll(".balcon_icons_img"),
+        windowWidth = document.querySelectorAll("#width"),
+        windowHeight = document.querySelectorAll("#height"),
+        windowType = document.querySelectorAll("#view_type"),
+        windowProfile = document.querySelectorAll(".checkbox");
   Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('#width');
   Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('#height');
 
@@ -15234,7 +15233,7 @@ const changeModalState = state => {
   }
 
   bindActionToElems('click', windowForm, 'form');
-  bindActionToElems('input', windowHeight, 'heigth');
+  bindActionToElems('input', windowHeight, 'height');
   bindActionToElems('input', windowWidth, 'width');
   bindActionToElems('change', windowType, 'type');
   bindActionToElems('change', windowProfile, 'profile');
@@ -15349,7 +15348,7 @@ const forms = state => {
 __webpack_require__.r(__webpack_exports__);
 const images = () => {
   const imgPopup = document.createElement('div'),
-        workSection = document.querySelector('works'),
+        workSection = document.querySelector('.works'),
         bigImage = document.createElement('img');
   imgPopup.classList.add('popup');
   workSection.appendChild(imgPopup);
@@ -15390,8 +15389,9 @@ const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
     const trigger = document.querySelectorAll(triggerSelector),
           modal = document.querySelector(modalSelector),
-          close = document.querySelector(closeSelector);
-    windows = document.querySelectorAll('[data-modal]'), scroll = calcScroll();
+          close = document.querySelector(closeSelector),
+          windows = document.querySelectorAll('[data-modal]'),
+          scroll = calcScroll();
     trigger.forEach(item => {
       item.addEventListener('click', e => {
         if (e.target) {
@@ -15449,7 +15449,7 @@ const modals = () => {
   bindModal('.phone_link', '.popup', '.popup .popup_close');
   bindModal('.popup_calc_btn', '.popup_calc', '.popup_calc_close');
   bindModal('.popup_calc_button', '.popup_calc_profile', '.popup_calc_profile_close', false);
-  bindModal('.popup_calc_profile_button', '.popup_calc_end', 'popup_calc_end_close', false); // showModalByTime('.popup', 60000)
+  bindModal('.popup_calc_profile_button', '.popup_calc_end', '.popup_calc_end_close', false); // showModalByTime('.popup', 60000)
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modals);
@@ -15552,10 +15552,10 @@ const timer = (id, deadline) => {
 
     function updateClock() {
       const time = getTimeRemaning(endtime);
-      days.textContent = addZero(t.days);
-      hours.textContent = addZero(t.hours);
-      minutes.textContent = addZero(t.minutes);
-      seconds.textContent = addZero(t.seconds);
+      days.textContent = addZero(time.days);
+      hours.textContent = addZero(time.hours);
+      minutes.textContent = addZero(time.minutes);
+      seconds.textContent = addZero(time.seconds);
 
       if (time.total <= 0) {
         days.textContent = "00";
