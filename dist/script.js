@@ -15192,11 +15192,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const changeModalState = state => {
-  const windowForm = document.querySelectorAll(".balcon_icons_img"),
-        windowWidth = document.querySelectorAll("#width"),
-        windowHeight = document.querySelectorAll("#height"),
-        windowType = document.querySelectorAll("#view_type"),
-        windowProfile = document.querySelectorAll(".checkbox");
+  const windowForm = document.querySelectorAll('.balcon_icons_img'),
+        windowWidth = document.querySelectorAll('#width'),
+        windowHeight = document.querySelectorAll('#height'),
+        windowType = document.querySelectorAll('#view_type'),
+        windowProfile = document.querySelectorAll('.checkbox');
   Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('#width');
   Object(_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('#height');
 
@@ -15209,7 +15209,7 @@ const changeModalState = state => {
             break;
 
           case 'INPUT':
-            if (item.getAttribure('type') === 'checkbox') {
+            if (item.getAttribute('type') === 'checkbox') {
               i === 0 ? state[prop] = "Холодное" : state[prop] = "Теплое";
               elem.forEach((box, j) => {
                 box.checked = false;
